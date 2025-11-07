@@ -4,10 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+<<<<<<< HEAD
     <groupId>com.eric.cabeceras</groupId>
     <artifactId>cabeceras</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>cabeceras</name>
+=======
+    <groupId>com.eric.manejodecookies</groupId>
+    <artifactId>manejodecookies</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>manejodecookies</name>
+>>>>>>> 8395a65 (uso de cookies)
     <packaging>war</packaging>
 
     <properties>

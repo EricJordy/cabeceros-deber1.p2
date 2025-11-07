@@ -1,0 +1,159 @@
+/* ===== Estilos generales (páginas con tablas/listas) ===== */
+:root{
+    --bg: #f7f8fb;
+    --card: #ffffff;
+    --texto: #30343a;
+    --muted: #6b7280;
+    --borde: #e6e8ef;
+
+    --azul: #1f6feb;          /* azul fuerte, elegante */
+    --azul-oscuro: #1a4fb8;
+    --vino: #7c1127;          /* rojo vino */
+    --vino-oscuro: #5e0d1e;
+
+    --cabecera-tabla: #eef3ff; /* azul muy claro para th */
+    --fila-par: #fafbff;
+    --realce: rgba(31,111,235,0.15); /* contorno de foco/realce */
+}
+
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial;
+    background: var(--bg);
+    color: var(--texto);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Contenedor */
+.container {
+    max-width: 1100px;
+    margin: 28px auto;
+    padding: 24px 20px;
+    background: var(--card);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+}
+
+/* Títulos */
+h1 {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: 650;
+    color: var(--azul-oscuro);
+    margin-bottom: 18px;
+}
+
+/* Bloque informativo de login */
+#login-info {
+    background: #f7f9ff;
+    padding: 12px 14px;
+    border: 1px solid var(--borde);
+    border-left: 4px solid var(--azul);
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+#welcome-message { color: var(--muted); }
+#welcome-message a {
+    color: var(--vino);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+#welcome-message a:hover { border-bottom-color: var(--vino); }
+
+/* Navegación / acciones */
+.nav-links { display: flex; gap: 10px; margin: 18px 0; flex-wrap: wrap; }
+.btn, button {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .08s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+/* Botón primario azul */
+.btn, button {
+    background: var(--azul);
+    color: #fff;
+}
+.btn:hover, button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(31,111,235,0.22);
+    border-color: var(--azul-oscuro);
+}
+.btn:active, button:active { transform: translateY(0); }
+
+/* Variante vino (usa .btn-vino) */
+.btn-vino {
+    background: var(--vino);
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 10px 22px;           /* más ancho y alto */
+    border-radius: 12px;          /* bordes redondeados */
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    transition: transform .08s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+.btn-vino:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(124,17,39,0.28);
+    border-color: var(--vino-oscuro);
+}
+
+.btn-vino:active {
+    transform: translateY(0);
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.96rem;
+}
+th, td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--borde);
+    text-align: left;
+}
+th {
+    background: var(--cabecera-tabla);
+    color: var(--azul-oscuro);
+    font-weight: 650;
+}
+tr:nth-child(even) { background: var(--fila-par); }
+
+tr:hover {
+    outline: 3px solid var(--realce);
+    outline-offset: -3px;
+}
+
+/* Enfatizar columna de precio (cuando visible) */
+.th-precio, .td-precio {
+    color: var(--vino-oscuro);
+    font-weight: 700;
+}
+
+/* Accesibilidad */
+:focus-visible {
+    outline: 3px solid var(--realce);
+    outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container { padding: 18px 14px; margin: 14px; }
+    h1 { font-size: 1.6rem; }
+    table { font-size: .92rem; }
+}

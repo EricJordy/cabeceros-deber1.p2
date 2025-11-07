@@ -1,0 +1,94 @@
+/* ===== Estilos pantalla de login (azul / vino) ===== */
+:root{
+    --bg: #f7f8fb;
+    --card: #ffffff;
+    --texto: #30343a;
+    --borde: #e6e8ef;
+
+    --azul: #1f6feb;
+    --azul-oscuro: #1a4fb8;
+    --vino: #7c1127;
+    --vino-oscuro: #5e0d1e;
+
+    --realce: rgba(31,111,235,0.18);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg);
+    color: var(--texto);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 22px;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: var(--card);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    padding: 28px 22px;
+}
+
+.login-title {
+    text-align: center;
+    color: var(--azul-oscuro);
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.login-form { display: grid; gap: 16px; }
+
+.form-group { display: grid; gap: 6px; }
+.form-group label { font-weight: 600; color: #434a56; }
+.form-group input {
+    padding: 11px 12px;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    background: #fbfcff;
+    font-size: 1rem;
+    transition: border-color .12s ease, box-shadow .12s ease, transform .08s ease;
+}
+.form-group input:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 4px var(--realce);
+    outline: none;
+}
+
+.submit-btn {
+    padding: 12px 14px;
+    background: var(--vino);
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .08s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(124,17,39,0.25);
+    border-color: var(--vino-oscuro);
+}
+.submit-btn:active { transform: translateY(0); }
+
+.helper-links { text-align: center; margin-top: 10px; font-size: 0.92rem; }
+.helper-links a {
+    color: var(--azul-oscuro);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    font-weight: 600;
+}
+.helper-links a:hover { border-bottom-color: var(--azul-oscuro); }
+
+.msg-error {
+    margin-top: 12px;
+    color: var(--vino);
+    font-weight: 700;
+    text-align: center;
+}
